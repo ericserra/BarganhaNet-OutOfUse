@@ -7,12 +7,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BarganhaNETv3.Data;
 using BarganhaNETv3.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BarganhaNETv3.Controllers
 {
     public class PessoaJuridicasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
         public PessoaJuridicasController(ApplicationDbContext context)
         {
